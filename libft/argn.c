@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   argn.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amovchan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 11:43:02 by amovchan          #+#    #+#             */
-/*   Updated: 2016/12/02 20:16:58 by amovchan         ###   ########.fr       */
+/*   Created: 2017/03/17 18:56:23 by amovchan          #+#    #+#             */
+/*   Updated: 2017/03/22 21:18:10 by amovchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(const char *s1, const char *s2)
+#include "libft.h"
+
+void	ft_argn(int len, va_list ap, t_srt *lst)
 {
-	while (*s1 == *s2 && *s1)
+	int	*tab;
+
+	if (lst->letar == 'n')
 	{
-		s1++;
-		s2++;
+		tab = va_arg(ap, int*);
+		*tab = len;
 	}
-	return (*((unsigned char *)s1) - *((unsigned char *)s2));
 }

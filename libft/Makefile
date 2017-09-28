@@ -6,7 +6,7 @@
 #    By: amovchan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/30 14:47:27 by amovchan          #+#    #+#              #
-#    Updated: 2016/12/15 17:49:15 by amovchan         ###   ########.fr        #
+#    Updated: 2017/04/25 17:04:00 by amovchan         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,6 +18,8 @@ G = gcc
 
 SRC = 	ft_atoi.c \
 		ft_bzero.c \
+		ft_strndup.c \
+		ft_strnjoin.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -80,8 +82,43 @@ SRC = 	ft_atoi.c \
 		ft_strsub.c \
 		ft_strtrim.c \
 		ft_tolower.c \
-		ft_toupper.c
-
+		ft_toupper.c \
+		ft_cast_str.c \
+		ft_casta.c \
+		ft_caststr_a.c \
+		ft_caststr_e.c \
+		ft_color.c \
+		ft_getstr.c \
+		ft_itoa_base.c \
+		ft_print_wchar.c \
+		ft_print.c \
+		ft_printf.c \
+		ft_specifiers.c \
+		ft_str_duble.c \
+		ft_strcasr_p.c \
+		ft_struct_format.c \
+		ft_width.c \
+		itoa.c \
+		pars.c \
+		argn.c \
+		cast_duble2.c \
+		ceil_floar.c \
+		format.c \
+		ft_accur_digits.c \
+		ft_accur.c \
+		ft_apostroph.c \
+		ft_casr_doubl.c \
+		ft_cast_digit.c \
+		ft_cast_g.c \
+		caststr_a.c \
+		caststra.c \
+		ft_cast_dig2.c \
+		ft_cast_size.c \
+		ft_castb.c \
+		get_next_line.c \
+		ft_len_arrey.c \
+        ft_get_line.c \
+        ft_dell_arrey.c
 HDR = libft.h
 
 OBJ = $(SRC:.c=.o)
@@ -91,15 +128,15 @@ DEL = rm -f
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-		ar -cru $(NAME) $(OBJ)
-		ranlib $(NAME)
+		@ar -cru $(NAME) $(OBJ)
+		@ranlib $(NAME)
 
 %.o: %.c libft.h
-		$(G) $(FLAG) -c -o $@ $<
+		@$(G) -c -o $@ $<
 clean:
-		$(DEL) $(OBJ)
+		@$(DEL) $(OBJ)
 
 fclean: clean
-		$(DEL) $(NAME)
+		@$(DEL) $(NAME)
 
 re: fclean all
